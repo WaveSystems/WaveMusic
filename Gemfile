@@ -27,7 +27,6 @@ group :test do
   gem 'rspec-rails'
   gem 'fuubar'
   gem 'factory_girl_rails'
-  gem 'resque_spec'
   gem 'simplecov'
   gem 'spork-rails'
 end
