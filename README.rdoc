@@ -9,8 +9,9 @@ Overall status: <b>5%</b>
 
 === Contributors
 
-Antonio Chávez https://github.com/TheNaox/
-Jorge Robles https://github.com/Flashdev20/
+
+* Antonio Chávez https://github.com/TheNaox/
+* Jorge Robles https://github.com/Flashdev20/
 
 Follow me on twitter @thenaox
 
