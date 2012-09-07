@@ -109,6 +109,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.14.1)
     polyglot (0.3.3)
     rabl (0.7.1)
       activesupport (>= 2.3.14)
@@ -214,6 +215,7 @@ DEPENDENCIES
   haml
   jquery-rails
   paperclip
+  pg
   rabl
   rails (= 3.2.7)
   rb-fsevent (~> 0.9.1)
