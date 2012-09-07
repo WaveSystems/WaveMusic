@@ -10,6 +10,7 @@ gem 'acts_as_api'
 gem 'rabl'
 gem 'haml'
 gem 'carrierwave'
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
