@@ -7,6 +7,8 @@ gem 'sqlite3'
 gem 'paperclip'
 gem 'devise'
 gem 'acts_as_api'
+gem 'rabl'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
