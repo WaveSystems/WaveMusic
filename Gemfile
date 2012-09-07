@@ -22,6 +22,7 @@ group :deployment do
 end
 
 group :test do                                                                                                                                        
+  gem 'guard-rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'
@@ -29,6 +30,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'spork-rails'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
 
 gem 'jquery-rails'
