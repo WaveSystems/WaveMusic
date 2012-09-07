@@ -8,6 +8,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'acts_as_api'
 gem 'rabl'
+gem 'haml'
 gem 'carrierwave'
 
 group :assets do
