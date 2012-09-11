@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::V1::UsersControllerTest < ActionController::TestCase
+class Api::V1::RegistrationsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
