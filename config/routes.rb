@@ -5,8 +5,8 @@ WaveMusic::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :registrations, :only => [:new, :create, :edit, :update]
-      resources :sessions, :only => [:new, :create, :edit, :update]
+      resources :registrations, only: [:create, :update]
+      resources :sessions, only: [:create, :destroy]
     end
   end
 end
