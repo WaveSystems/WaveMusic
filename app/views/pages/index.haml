@@ -1,1 +1,11 @@
-%h1 Hola mundo!
+.hero-unit
+  %h1 WaveMusic
+  %br
+  %p This application is currently on development, please sign up for launch date and news from WaveMusic.
+  - unless user_signed_in?
+    = link_to "Sign in", :new_user_registration, class: "btn btn-primary btn-large"
+    or
+    = link_to "Sign up", :new_user_registration, class: "btn btn-primary btn-large"
+  - else
+    %p 
+      %b You already sent your information
