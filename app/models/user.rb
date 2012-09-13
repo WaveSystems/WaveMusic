@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username, :email
+  before_save :reset_authentication_token
   # Include default devise modules. Others available are:
   #:token_authenticatable, :confirmable,
   #:lockable, :timeoutable and :omniauthable
