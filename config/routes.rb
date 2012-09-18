@@ -7,6 +7,12 @@ WaveMusic::Application.routes.draw do
     namespace :v1 do
       resources :registrations, only: [:create]
       resources :sessions, only: [:create, :destroy]
+      resources :stream, only: [:index] do
+        collection do
+          get :upload
+        end
+      end
     end
   end
+
 end
