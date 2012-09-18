@@ -10,6 +10,7 @@ WaveMusic::Application.routes.draw do
       resources :stream, only: [:index] do
         collection do
           get :upload
+          post :save
         end
       end
     end

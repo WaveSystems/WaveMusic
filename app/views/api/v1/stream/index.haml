@@ -1,0 +1,6 @@
+- @songs.each do |song|
+  = song.name
+  = song.song
+  %br
+
+= button_to "Upload new song", upload_api_v1_stream_index_path, :method => 'get'
