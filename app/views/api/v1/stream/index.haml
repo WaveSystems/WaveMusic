@@ -1,6 +1,18 @@
-- @songs.each do |song|
-  = song.name
-  = song.song
-  %br
+#music-list
+  %table.table.table-striped.table-bordered.table-hover
+    %head
+      %tr
+        %th #
+        %th Name
+        %th
+        %th
+    %tbody
+    - @songs.each do |song|
+      %tr
+        %td= song.id
+        %td= song.name
+        %td= link_to "Download", :root, class: "btn btn-primary"
+        %td= link_to "Play!", :root, class: "btn btn-inverse"
 
-= button_to "Upload new song", upload_api_v1_stream_index_path, :method => 'get'
+%center
+  = button_to "Upload new song", upload_api_v1_stream_index_path, :method => 'get', class: 'btn btn-info'

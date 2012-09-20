@@ -12,6 +12,10 @@ WaveMusic::Application.routes.draw do
           get :upload
           post :save
         end
+        member do
+          get :download
+          get :play
+        end
       end
     end
   end

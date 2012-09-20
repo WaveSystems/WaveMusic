@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+#music-list {
+  margin:auto;
+  width: 800px;
+}
