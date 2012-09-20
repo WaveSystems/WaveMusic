@@ -21,6 +21,8 @@ class Api::V1::StreamController < ApplicationController
   end
 
   def download
+    song = Song.find(params[:id])
+    send_file("#{song.song.file.file}")
   end
 
   def play
