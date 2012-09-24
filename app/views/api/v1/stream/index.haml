@@ -1,18 +1,26 @@
-#music-list
-  %table.table.table-striped.table-bordered.table-hover
-    %head
-      %tr
-        %th #
-        %th Name
-        %th
-        %th
-    %tbody
-    - @songs.each do |song|
-      %tr
-        %td= song.id
-        %td= song.name
-        %td= link_to "Download", download_api_v1_stream_path(song.id), class: "btn btn-primary", remote: true
-        %td= link_to "Play!", play_api_v1_stream_path(song.id), class: "btn btn-inverse"
+- unless @songs.empty?
+  #music-list
+    %table.table.table-striped.table-bordered.table-hover
+      %head
+        %tr
+          %th #
+          %th Name
+          %th
+          %th
+      %tbody
+      - @songs.each do |song|
+        %tr
+          %td= song.id
+          %td= song.name
+          %td= link_to "Download", download_api_v1_stream_path(song.id), class: "btn btn-primary", remote: true
+          %td= link_to "Play!", play_api_v1_stream_path(song.id), class: "btn btn-inverse"
+- else
+  .hero-unit
+    %h1 Atention!
+    %p 
+      There are no songs in the library,
+      = link_to "Why you no", 'http://i0.kym-cdn.com/photos/images/original/000/089/665/tumblr_l96b01l36p1qdhmifo1_500.jpg', target: 'blank'
+      upload new music?
 
 %center
   = button_to "Upload new song", upload_api_v1_stream_index_path, :method => 'get', class: 'btn btn-info'
