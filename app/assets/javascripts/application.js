@@ -10,6 +10,20 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require underscore
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//
+
+var wave_music = {
+  Model: {},
+  Collection: {},
+  View: {},
+  Helper: {},
+
+  initialize: function(){
+    wave_music.router = new wave_music.Router();
+    Backbone.history.start({pushState:true});
+  }
+}
