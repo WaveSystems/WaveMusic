@@ -12,7 +12,7 @@
         %tr
           %td= song.id
           %td= song.name
-          %td= link_to "Download", download_api_v1_stream_path(song.id), class: "btn btn-primary", remote: true
+          %td= link_to "Download", download_api_v1_stream_path(song.id), class: "btn btn-primary", target: 'blank'
           %td= link_to "Play!", play_api_v1_stream_path(song.id), class: "btn btn-inverse"
 - else
   .hero-unit
