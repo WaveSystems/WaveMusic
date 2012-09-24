@@ -22,7 +22,7 @@ class Api::V1::StreamController < ApplicationController
 
   def download
     song = Song.find(params[:id])
-    send_file("#{song.song.file.file}")
+    send_file "#{Rails.root}#{song.song.url}", type: 'audio/mp3'
   end
 
   def play
