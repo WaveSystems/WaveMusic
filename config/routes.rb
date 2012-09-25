@@ -4,9 +4,12 @@ WaveMusic::Application.routes.draw do
   root to: 'pages#index'
 
   namespace :api do
+
     namespace :v1 do
+
       resources :registrations, only: [:create]
       resources :sessions, only: [:create, :destroy]
+
       resources :stream, only: [:index] do
         collection do
           get :upload
@@ -18,7 +21,11 @@ WaveMusic::Application.routes.draw do
           delete :delete
         end
       end
+
+      resources :music, :only => [:index, :create, :destroy]
+
     end
+
   end
 
 end
