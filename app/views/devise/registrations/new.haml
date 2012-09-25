@@ -1,28 +1,28 @@
-%h2 Sign up
+%legend Sign up
 
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, html: {class: "form-horizontal"}, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
 
-  %div
-    = f.label :username
-    %br
-    = f.text_field :username
+  .control-group
+    = f.label :username, class: 'control-label', for: 'user_username'
+    .controls
+      = f.text_field :username
 
-  %div
-    = f.label :email
-    %br
-    = f.email_field :email
+  .control-group
+    = f.label :email, class: 'control-label', for: 'user_emal'
+    .controls
+      = f.email_field :email
 
-  %div
-    = f.label :password
-    %br
-    = f.password_field :password
+  .control-group
+    = f.label :password, class: 'control-label', for: 'user_password'
+    .controls
+      = f.password_field :password
 
-  %div
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation
+  .control-group
+    = f.label :password_confirmation, class: 'control-label', for: 'user_password_confirmation'
+    .controls
+      = f.password_field :password_confirmation
 
-  %div= f.submit "Sign up"
+      %div= f.submit "Sign up", class: 'btn'
 
 = render "devise/shared/links"

@@ -1,0 +1,9 @@
+- if flash[:alert]
+  %div.alert
+    %button(data-dismiss="alert" class="close") x
+    = flash[:alert]
+
+- if flash[:notice]
+  %div.notice.alert.alert-success
+    %button(data-dismiss="alert" class="close") x
+    = flash[:notice]

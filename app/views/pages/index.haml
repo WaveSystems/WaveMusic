@@ -3,7 +3,7 @@
   %br
   %p This application is currently on development, please sign up for launch date and news from WaveMusic.
   - unless user_signed_in?
-    = link_to "Sign in", :new_user_registration, class: "btn btn-primary btn-large"
+    = link_to "Sign in", :new_user_session, class: "btn btn-primary btn-large"
     or
     = link_to "Sign up", :new_user_registration, class: "btn btn-primary btn-large"
   - else

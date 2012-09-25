@@ -1,0 +1,13 @@
+.navbar.navbar-inverse.navbar-static-top
+  .navbar-inner
+    .container
+      %a{ class: "brand", href: "#{root_path}"} WaveMusic
+      %ul.nav
+        %li= link_to "Stream", :api_v1_stream_index
+      %ul.nav.pull-right
+        - if user_signed_in?
+          %li= link_to "Hello! #{current_user.username}", :root
+          %li= link_to "Sign out", :destroy_user_session, method: 'delete'
+        - else
+          %li= link_to "Sign in", :new_user_session
+          %li= link_to "Sign up", :new_user_registration
