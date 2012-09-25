@@ -15,6 +15,7 @@ WaveMusic::Application.routes.draw do
         member do
           get :download
           get :play
+          delete :delete
         end
       end
     end

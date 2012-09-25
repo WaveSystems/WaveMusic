@@ -9,8 +9,8 @@ class Song < ActiveRecord::Base
       "name" => read_attribute(:song),
       "size" => song.size,
       "url" => song.url,
-      "song_url" => song.thumb.url,
-      "delete_url" => picture_path(:id => id),
+      "song_url" => song.url,
+      "delete_url" => delete_api_v1_stream_path(:id => id),
       "delete_type" => "DELETE" 
     }
   end

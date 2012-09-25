@@ -28,4 +28,15 @@ class Api::V1::StreamController < ApplicationController
   def play
   end
 
+  def delete
+    @song = Song.find(params[:id])
+    if @song.delete
+      flash[:notice]="Successfully deleted song"
+      redirect_to api_v1_stream_index_path
+    else
+      flash[:alert]="Couldn't delete the song"
+      redirect_to api_v1_stream_index_path
+    end
+  end
+
 end
