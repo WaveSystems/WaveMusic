@@ -10,7 +10,7 @@ class Song < ActiveRecord::Base
       "size" => song.size,
       "url" => song.url,
       "song_url" => song.url,
-      "delete_url" => api_v1_music_path(:id => id),
+      "delete_url" => "/api/v1/music/#{id}",
       "delete_type" => "DELETE" 
     }
   end
