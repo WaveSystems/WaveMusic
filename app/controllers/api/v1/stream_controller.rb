@@ -26,6 +26,7 @@ class Api::V1::StreamController < ApplicationController
   end
 
   def play
+    @song = Song.find(params[:id])
   end
 
   def delete
