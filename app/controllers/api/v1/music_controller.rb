@@ -35,6 +35,5 @@ class Api::V1::MusicController < ApplicationController
 
     send_file "#{Rails.root}/public#{@song.song.url}", type: MIME::Types.type_for(@song.song.url).first.to_s
     render stream: true
-    redirect_to :back
   end
 end
