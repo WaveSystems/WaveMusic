@@ -11,6 +11,7 @@ gem 'rabl'
 gem 'haml'
 gem 'carrierwave'
 gem 'pg'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

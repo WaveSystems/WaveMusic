@@ -29,4 +29,12 @@ class Api::V1::MusicController < ApplicationController
     @song.destroy
     render :json => true
   end
+  
+  def download
+    @song = Song.find(params[:id])
+
+    send_file "#{Rails.root}/public#{@song.song.url}", type: MIME::Types.type_for(@song.song.url).first.to_s
+    render stream: true
+    redirect_to :back
+  end
 end

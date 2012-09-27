@@ -22,7 +22,11 @@ WaveMusic::Application.routes.draw do
         end
       end
 
-      resources :music, :only => [:index, :create, :destroy]
+      resources :music, only: [:index, :create, :destroy] do
+        member do
+          get :download
+        end
+      end
 
     end
 
