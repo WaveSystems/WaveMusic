@@ -30,4 +30,12 @@ describe Api::V1::SessionsController do
 
   end
 
+  describe 'DELETE /api/v1/session' do
+
+    it 'should destroy session' do
+      true
+    end
+
+  end
+
 end

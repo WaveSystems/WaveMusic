@@ -17,6 +17,10 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    sign_out(resource_name)
+  end
+
   private
   
   def invalid_login_attempt
