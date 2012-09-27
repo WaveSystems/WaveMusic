@@ -21,19 +21,19 @@ end
 
 group :deployment do
   gem 'foreman'
-  gem 'unicorn'
 end
 
 group :test do                                                                                                                                        
-  gem 'guard-rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'fuubar'
   gem 'factory_girl_rails'
-  gem 'simplecov'
   gem 'spork-rails'
   gem 'rb-fsevent', '~> 0.9.1'
+  gem 'simplecov'
 end
 
 gem 'jquery-rails'
