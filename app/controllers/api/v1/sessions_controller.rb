@@ -18,13 +18,17 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out(resource_name)
+    if sign_out(params[:user])
+      render json: { success: true, message: 'Successfully logged out' }
+    else
+      respond_with success: false
+    end
   end
 
   private
   
   def invalid_login_attempt
-    render json: { success: false, message: 'Invalid login attempt' }
+    respond_with success: false
   end
 
 end

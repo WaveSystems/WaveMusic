@@ -8,11 +8,6 @@ describe Api::V1::SessionsController do
 
   describe 'POST /api/v1/sessions' do
 
-    it 'should respond with status 200' do
-      post api_v1_sessions_path(user_login: {} )
-      response.should be_success
-    end
-
     it 'should login if user is valid' do
       post api_v1_sessions_path(user_login: { email: @user.email, password: @user.password } )
       ActiveSupport::JSON.decode(response.body)['success'].should be_true
@@ -20,7 +15,7 @@ describe Api::V1::SessionsController do
 
     it 'should reject login attempt if not valid' do
       post api_v1_sessions_path(user_login: { email: @user.email, password: 'not password' } )
-      ActiveSupport::JSON.decode(response.body)['success'].should be_false
+      response.should_not be_success
     end
 
     it 'should get authentication token for keep logged in' do
@@ -33,7 +28,15 @@ describe Api::V1::SessionsController do
   describe 'DELETE /api/v1/session' do
 
     it 'should destroy session' do
-      true
+      post api_v1_sessions_path(user_login: { email: @user.email, password: @user.password } )
+      delete api_v1_session_path(@user)
+      response.should be_success
+    end
+
+    it 'should get meesage when logged out' do
+      post api_v1_sessions_path(user_login: { email: @user.email, password: @user.password } )
+      delete api_v1_session_path(@user)
+      ActiveSupport::JSON.decode(response.body)['message'].should == 'Successfully logged out'
     end
 
   end
