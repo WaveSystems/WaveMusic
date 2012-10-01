@@ -3,15 +3,13 @@ class Song < ActiveRecord::Base
   mount_uploader :song, SongUploader
   attr_accessible :name, :song, :song_cache
 
-  #one convenient method to pass jq_upload the necessary information
-  def to_jq_upload
-    {
-      "name" => read_attribute(:song),
-      "size" => song.size,
-      "url" => song.url,
-      "song_url" => song.url,
-      "delete_url" => "/api/v1/music/#{id}",
-      "delete_type" => "DELETE" 
-    }
+  def json_format
+    {name: name, filename: read_attribute(:song), size: song.size, url: song.url, delete_url: "/api/v1/music/#{id}", delete_type: "DELETE"}
+  end
+
+  class << self
+    def info
+      all.map { |song| song.json_format }
+    end
   end
 end

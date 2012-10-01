@@ -1,9 +1,11 @@
 class Api::V1::MusicController < ApplicationController
   before_filter :authenticate_user!
 
+  respond_to :json
+
   def index
     @songs = Song.all
-    render :json => @songs.collect { |p| p.to_jq_upload }.to_json
+    respond_with @songs.collect { |p| p.json_format }.to_json
   end
 
   def create
