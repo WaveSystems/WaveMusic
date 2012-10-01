@@ -1,7 +1,7 @@
 = WaveMusic
 
 
-Overall status: <b>5%</b>
+Overall status: <b>30%</b>
 
 == About the project
 
